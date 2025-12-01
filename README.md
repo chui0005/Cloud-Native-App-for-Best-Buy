@@ -1,12 +1,6 @@
-# Algonquin Pet Store (On Steroids)
-Welcome to the Algonquin Pet Store (On Steroids) application.
+# Best Buy Cloud Native Application
+Welcome to the Best Buy Cloud-Native Demo Application, a microservices-based reference system built using the Algonquin Pet Store (On Steroids) architecture. This project represents a realistic, production-style cloud-native application designed to demonstrate modern full-stack development, containerization, and Kubernetes orchestration patterns.
 
-This sample demo app consists of a group of containerized microservices that can be easily deployed into a Kubernetes cluster. This is meant to show a realistic scenario using a polyglot architecture, event-driven design, and common open source back-end services (eg - RabbitMQ, MongoDB). The application also leverages OpenAI's models to generate product descriptions and images. This can be done using either [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/overview) or [OpenAI](https://openai.com/).
-
-This application is inspired by Azure Kubernetes Service (AKS) quickstart demo [Azure Kubernetes Service (AKS) Docs](https://learn.microsoft.com/en-us/azure/aks/).
-
-> [!NOTE]
-> This is not meant to be an example of perfect code to be used in production, but more about showing a realistic application running in kubernetes. 
 
 ## Architecture
 
@@ -19,12 +13,15 @@ The application has the following services:
 | `order-service` | This service is used for placing orders (Javascript) | [order-service-L8](https://github.com/ramymohamed10/order-service-L8) |
 | `product-service` | This service is used to perform CRUD operations on products (Rust) | [product-service-L8](https://github.com/ramymohamed10/product-service-L8) |
 | `makeline-service` | This service handles processing orders from the queue and completing them (Golang) | [makeline-service-L8](https://github.com/ramymohamed10/makeline-service-L8) |
-| `ai-service` | Optional service for adding generative text and graphics creation (Python) | [ai-service-L8](https://github.com/ramymohamed10/ai-service-L8) |
-| `rabbitmq` | RabbitMQ for an order queue | [rabbitmq](https://github.com/docker-library/rabbitmq) |
-| `mongodb` | MongoDB instance for persisted data | [mongodb](https://github.com/docker-library/mongo) |
-| `virtual-customer` | Simulates order creation on a scheduled basis (Rust) | [virtual-customer-L8](https://github.com/ramymohamed10/virtual-customer-L8) |
-| `virtual-worker` | Simulates order completion on a scheduled basis (Rust) | [virtual-worker-L8](https://github.com/ramymohamed10/virtual-worker-L8) |
 
+The application uses MongoDB as a stateful data store, deployed alongside stateless services, to demonstrate real-world data persistence considerations in Kubernetes environments.
+
+This demo emphasizes:
+- Microservices and API-first design
+- Event-driven communication patterns
+- Containerization and Kubernetes deployment
+- Separation of concerns between frontend, backend, and worker services
+- Realistic cloud-native operational architecture suitable for enterprise environments like Best Buy
 
 ![Logical Application Architecture Diagram](assets/Algonquin%20Pet%20Store%20On%20Steroids.png)
 
